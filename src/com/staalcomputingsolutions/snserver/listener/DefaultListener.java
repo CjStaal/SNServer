@@ -4,13 +4,15 @@
 package com.staalcomputingsolutions.snserver.listener;
 
 import java.io.DataInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 
 
-public class DefaultListener implements Listener {
+public class DefaultListener implements Listener{
 
     private InputStream inputStream;
-    private DataInputStream dataInputStream; 
+    private DataInputStream dataInputStream;
+    
     public DefaultListener(InputStream inputStream){
         this.inputStream = inputStream;
         this.dataInputStream = new DataInputStream(inputStream);
@@ -24,10 +26,8 @@ public class DefaultListener implements Listener {
         return this.dataInputStream;
     }
     
-    
-    @Override
-    public void run() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String listen() throws IOException{
+        return dataInputStream.readUTF();
     }
     
 }

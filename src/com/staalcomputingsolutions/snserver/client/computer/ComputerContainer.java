@@ -1,12 +1,12 @@
 /*
  * Copyright [2015] [Charles Joseph Staal]
  */
-package com.staalcomputingsolutions.snserver.messagequeue;
+package com.staalcomputingsolutions.snserver.client.computer;
 
 /**
  *
  * @author Charles Joseph Staal
  */
-public interface MessageQueue extends Runnable{
+public class ComputerContainer {
     
 }
