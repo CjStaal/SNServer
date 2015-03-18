@@ -88,7 +88,7 @@ class ClientConnection implements AutoCloseable {
         this.socket.close();
         this.dataInputStream.close();
         this.dataOutputStream.close();
-        JOptionPane.showMessageDialog(null, "PING FAILED, HELP NEEDED, etc");
+        JOptionPane.showMessageDialog(null, "PING FAILED, HELP NEEDED " + clientInformation.toString());
         this.handler.removeHandler(this);
         try {
             this.finalize();
