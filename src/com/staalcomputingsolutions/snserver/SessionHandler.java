@@ -13,10 +13,10 @@ import java.util.List;
  */
 public class SessionHandler {
 
-    private List<Session> sessions = new ArrayList();
+    private final List<Session> sessions;
 
     public SessionHandler() {
-
+        this.sessions = new ArrayList();
     }
 
     public void addHandler(Session session) {

@@ -3,9 +3,6 @@
  */
 package com.staalcomputingsolutions.snserver.client;
 
-import com.staalcomputingsolutions.snserver.client.computer.Computer;
-import com.staalcomputingsolutions.snserver.client.computer.ComputerContainer;
-
 /**
  *
  * @author Charles Joseph Staal

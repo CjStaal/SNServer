@@ -14,7 +14,7 @@ import java.util.List;
 public class DefaultClient implements Client {
 
     private final ComputerContainer computerContainer;
-    private ClientInformation clientInformation;
+    private final ClientInformation clientInformation;
 
     public DefaultClient(ClientInformation clientInformation) {
         this.clientInformation = clientInformation;
