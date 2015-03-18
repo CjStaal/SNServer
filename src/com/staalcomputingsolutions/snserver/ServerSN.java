@@ -1,8 +1,10 @@
 /*
  * Copyright [2015] [Charles Joseph Staal]
  */
-package serversn;
+package com.staalcomputingsolutions.snserver;
 
+import com.staalcomputingsolutions.snserver.session.Session;
+import com.staalcomputingsolutions.snserver.session.SessionFactory;
 import java.io.IOException;
 import java.net.ServerSocket;
 
@@ -17,10 +19,11 @@ public class ServerSN {
      * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
-        Handler handler = new Handler();
+        SessionHandler handler = new SessionHandler();
         ServerSocket serverSocket = new ServerSocket(1001);
         while(true){
-            handler.addHandler(new ClientConnection(serverSocket.accept(), handler));
+            Session session = SessionFactory
+                    .createSession(serverSocket.accept());
         }
     }
     

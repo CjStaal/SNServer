@@ -1,13 +1,13 @@
 /*
  * Copyright [2015] [Charles Joseph Staal]
  */
-package serversn;
+package com.staalcomputingsolutions.snserver;
 
 /**
  *
  * @author Charles Joseph Staal
  */
-class Computer {
+public class Computer {
 
     private final String name, localIP;
 
