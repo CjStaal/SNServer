@@ -3,6 +3,7 @@
  */
 package com.staalcomputingsolutions.snserver.replier;
 
+import com.staalcomputingsolutions.snserver.session.Session;
 import java.io.IOException;
 import java.net.Socket;
 
@@ -12,7 +13,7 @@ import java.net.Socket;
  */
 public class ReplierFactory {
 
-    public static Replier createReplier(Socket socket) throws IOException {
-        return new DefaultReplier(socket.getOutputStream());
+    public static Replier createReplier(Socket socket, Session session) throws IOException {
+        return new DefaultReplier(socket.getOutputStream(), session);
     }
 }

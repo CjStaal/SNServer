@@ -25,9 +25,10 @@ public class SessionFactory {
 
     public static Session createSession(Socket socket) throws Exception {
 
-        Listener listener = ListenerFactory.createListener(socket);
-        Replier replier = ReplierFactory.createReplier(socket);
-        MessageQueue messageQueue = MessageQueueFactory.createQueue();
+        Session session = new DefaultSession();
+        Listener listener = ListenerFactory.createListener(socket, session);
+        Replier replier = ReplierFactory.createReplier(socket, session);
+        MessageQueue messageQueue = MessageQueueFactory.createQueue(listener, session);
         Pinger pinger = PingerFactory.createPinger(replier);
         ClientInformation clientInformation = ClientInformationFactory.createInformation(listener, replier);
         Client client = ClientFactory.createClient(clientInformation);
@@ -40,7 +41,9 @@ public class SessionFactory {
         sessionContext.addMessageQueue(messageQueue);
         sessionContext.addPinger(pinger);
         sessionContext.addClient(client);
-
-        return new DefaultSession(sessionContext);
+        
+        session.addContext(sessionContext);
+        
+        return session;
     }
 }

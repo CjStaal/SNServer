@@ -33,4 +33,12 @@ public interface Session {
     public void stopPinger();
 
     public Socket getSocket();
+
+    public void addContext(SessionContext sessionContext);
+
+    public void notifyListenError();
+
+    public void notifyOfReplyError();
+
+    public void notifyOfMessageInQueue();
 }

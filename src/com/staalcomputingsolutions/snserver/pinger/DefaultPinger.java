@@ -19,7 +19,6 @@ public class DefaultPinger implements Pinger {
     public DefaultPinger(Replier replier) {
         this.replier = replier;
     }
-
     @Override
     public void startPinger() {
         task = new TimerTask() {

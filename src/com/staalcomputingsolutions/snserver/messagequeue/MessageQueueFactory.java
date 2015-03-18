@@ -12,7 +12,7 @@ import com.staalcomputingsolutions.snserver.session.Session;
  */
 public class MessageQueueFactory {
 
-    public static MessageQueue createQueue(Listener listener, Session callback) {
-        return new DefaultMessageQueue(listener, callback);
+    public static MessageQueue createQueue(Listener listener, Session session) {
+        return new DefaultMessageQueue(listener, session);
     }
 }

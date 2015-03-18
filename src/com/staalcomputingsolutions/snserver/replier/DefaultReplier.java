@@ -3,6 +3,7 @@
  */
 package com.staalcomputingsolutions.snserver.replier;
 
+import com.staalcomputingsolutions.snserver.session.Session;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -17,10 +18,12 @@ public class DefaultReplier implements Replier {
 
     private final OutputStream outputStream;
     private final DataOutputStream dataOutputStream;
+    private final Session callback;
 
-    public DefaultReplier(OutputStream outputStream) {
+    public DefaultReplier(OutputStream outputStream, Session callback) {
         this.outputStream = outputStream;
         this.dataOutputStream = new DataOutputStream(outputStream);
+        this.callback = callback;
     }
 
     @Override
@@ -29,6 +32,7 @@ public class DefaultReplier implements Replier {
             this.dataOutputStream.writeUTF(message);
         } catch (IOException ex) {
             Logger.getLogger(DefaultReplier.class.getName()).log(Level.SEVERE, null, ex);
+            callback.notifyOfReplyError();
         }
     }
 

@@ -16,10 +16,9 @@ import java.net.Socket;
  */
 public class DefaultSession implements Session {
 
-    private final SessionContext sessionContext;
+    private SessionContext sessionContext;
 
-    public DefaultSession(SessionContext sessionContext) {
-        this.sessionContext = sessionContext;
+    public DefaultSession() {
     }
 
     @Override
@@ -64,5 +63,25 @@ public class DefaultSession implements Session {
     @Override
     public Socket getSocket() {
         return this.sessionContext.getSocket();
+    }
+
+    @Override
+    public void addContext(SessionContext sessionContext) {
+        this.sessionContext = sessionContext;
+    }
+
+    @Override
+    public void notifyListenError() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void notifyOfReplyError() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void notifyOfMessageInQueue() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
