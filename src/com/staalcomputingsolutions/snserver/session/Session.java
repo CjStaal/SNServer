@@ -26,5 +26,9 @@ public interface Session {
     public Pinger getPinger(Pinger pinger);
 
     public Client getClient();
+    
+    public void startPinger();
+    
+    public void stopPinger();
 
 }

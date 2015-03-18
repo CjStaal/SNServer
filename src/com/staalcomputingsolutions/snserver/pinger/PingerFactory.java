@@ -12,7 +12,7 @@ import com.staalcomputingsolutions.snserver.replier.Replier;
 public class PingerFactory {
 
     public static Pinger createPinger(Replier replier) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new DefaultPinger(replier);
     }
     
 }

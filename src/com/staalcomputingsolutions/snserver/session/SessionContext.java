@@ -35,4 +35,8 @@ public interface SessionContext {
 
     public Client getClient();
     
+    public void startPinger();
+    
+    public void stopPinger();
+    
 }

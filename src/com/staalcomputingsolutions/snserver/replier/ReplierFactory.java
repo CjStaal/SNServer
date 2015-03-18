@@ -3,6 +3,7 @@
  */
 package com.staalcomputingsolutions.snserver.replier;
 
+import java.io.IOException;
 import java.net.Socket;
 
 /**
@@ -11,8 +12,8 @@ import java.net.Socket;
  */
 public class ReplierFactory {
 
-    public static Replier createReplier(Socket socket) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static Replier createReplier(Socket socket) throws IOException {
+        return new DefaultReplier(socket.getOutputStream());
     }
     
 }

@@ -49,4 +49,14 @@ public class DefaultSession implements Session{
     public Client getClient() {
         return this.sessionContext.getClient();
     }
+    
+    @Override
+    public void startPinger(){
+        this.sessionContext.startPinger();
+    }
+    
+    @Override
+    public void stopPinger(){
+        this.sessionContext.stopPinger();
+    }
 }

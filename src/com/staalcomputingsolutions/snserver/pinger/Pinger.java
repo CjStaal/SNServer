@@ -10,4 +10,7 @@ package com.staalcomputingsolutions.snserver.pinger;
  */
 public interface Pinger {
     
+    public void startPinger();
+    
+    public void stopPinger();
 }

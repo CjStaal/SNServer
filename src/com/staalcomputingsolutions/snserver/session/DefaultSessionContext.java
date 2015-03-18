@@ -72,4 +72,14 @@ public class DefaultSessionContext implements SessionContext {
     public Client getClient() {
         return this.client;
     }
+    
+    @Override
+    public void startPinger(){
+        pinger.startPinger();
+    }
+    
+    @Override
+    public void stopPinger(){
+        pinger.stopPinger();
+    }
 }
