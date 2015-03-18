@@ -40,9 +40,7 @@ public class SessionFactory {
         sessionContext.addPinger(pinger);
         sessionContext.addClient(client);
 
-        Session session = new DefaultSession(sessionContext);
-
-        return session;
+        return new DefaultSession(sessionContext);
     }
 
 }
