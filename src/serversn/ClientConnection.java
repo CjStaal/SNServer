@@ -17,21 +17,23 @@ import javax.swing.JOptionPane;
  *
  * @author Charles Joseph Staal
  */
-class ClientConnection implements AutoCloseable{
+class ClientConnection implements AutoCloseable {
 
-    private static final Logger logger = Logger.getLogger(ClientConnection.class.getName());
     private final Object writeLock = new Object();
     private final Socket socket;
     private final DataInputStream dataInputStream;
     private final DataOutputStream dataOutputStream;
     private final Handler handler;
-    
+
     private ClientInformation clientInformation;
+
     public ClientConnection(Socket socket, Handler handler) throws IOException {
         this.socket = socket;
         this.dataInputStream = new DataInputStream(socket.getInputStream());
         this.dataOutputStream = new DataOutputStream(socket.getOutputStream());
         this.handler = handler;
+        this.startPing();
+        this.startListener();
     }
 
     private void startPing() {
@@ -72,7 +74,7 @@ class ClientConnection implements AutoCloseable{
                 this.dataOutputStream.flush();
             }
         } catch (IOException ex) {
-            logger.log(Level.SEVERE, null, ex);
+            Logger.getLogger(ClientConnection.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -88,28 +90,29 @@ class ClientConnection implements AutoCloseable{
         } catch (Throwable ex) {
             Logger.getLogger(ClientConnection.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
-    
-    private void startListener(){
+
+    private void startListener() {
         new Thread(this::listen).start();
     }
-    
-    private void listen(){
-        while(true){
+
+    private void listen() {
+        while (true) {
             try {
                 String message = this.dataInputStream.readUTF();
-                if(message.contains("INFO:")){
+                if (message.contains("INFO:")) {
                     String[] info = message.split(":");
                     String name = info[1].split(":")[1];
                     String phoneNumber = info[2].split(":")[1];
                     clientInformation = new ClientInformation(name, phoneNumber);
-                }
-                else if(message.contains("ADDC:")){
-                    String[] info = message.split(":");
-                    String name = info[1].split(":")[1];
-                    String localIP = info[2].split(":")[1];
-                    clientInformation.addComputer(new Computer(name, localIP));
+                } else if (message.contains("ADDC:")) {
+                    if (clientInformation != null) {
+                        String[] info = message.split(":");
+                        String name = info[1].split(":")[1];
+                        String localIP = info[2].split(":")[1];
+                        clientInformation.addComputer(new Computer(name, localIP));
+                    }
                 }
             } catch (IOException ex) {
                 Logger.getLogger(ClientConnection.class.getName()).log(Level.SEVERE, null, ex);
