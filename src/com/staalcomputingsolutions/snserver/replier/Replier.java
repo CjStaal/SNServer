@@ -9,4 +9,5 @@ package com.staalcomputingsolutions.snserver.replier;
  */
 public interface Replier {
     
+    public void reply(String message);
 }
