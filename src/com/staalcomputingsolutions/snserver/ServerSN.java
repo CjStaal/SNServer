@@ -3,7 +3,6 @@
  */
 package com.staalcomputingsolutions.snserver;
 
-import com.staalcomputingsolutions.snserver.session.Session;
 import com.staalcomputingsolutions.snserver.session.SessionFactory;
 import java.io.IOException;
 import java.net.ServerSocket;
