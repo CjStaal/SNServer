@@ -12,7 +12,7 @@ import com.staalcomputingsolutions.sns.model.client.ComputerContainer;
  */
 public class DefaultClientInformation implements ClientInformation {
     
-    private ComputerContainer computerContainer;
+    private final ComputerContainer computerContainer;
     
     private final String name, phoneNumber;
     

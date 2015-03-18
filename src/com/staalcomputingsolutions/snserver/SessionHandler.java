@@ -12,17 +12,17 @@ import java.util.List;
  * @author Charles Joseph Staal
  */
 public class SessionHandler {
-    private List<Session> listeners = new ArrayList();
+    private List<Session> sessions = new ArrayList();
     
     public SessionHandler(){
         
     }
     
     public void addHandler(Session session){
-        this.listeners.add(session);
+        this.sessions.add(session);
     }
     
     public void removeHandler(Session session){
-        this.listeners.remove(session);
+        this.sessions.remove(session);
     }
 }
