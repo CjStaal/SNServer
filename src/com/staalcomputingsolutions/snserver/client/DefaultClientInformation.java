@@ -12,12 +12,9 @@ import com.staalcomputingsolutions.snserver.client.computer.ComputerContainer;
  */
 public class DefaultClientInformation implements ClientInformation {
 
-    private final ComputerContainer computerContainer;
-
     private final String name, phoneNumber;
 
     public DefaultClientInformation(String name, String phoneNumber) {
-        this.computerContainer = new ComputerContainer();
         this.name = name;
         this.phoneNumber = phoneNumber;
     }
@@ -37,8 +34,4 @@ public class DefaultClientInformation implements ClientInformation {
         return "Name: " + this.getName() + "\nPhone number: " + this.getPhoneNumber();
     }
 
-    @Override
-    public void addComputer(Computer computer) {
-        this.computerContainer.addComputer(computer);
-    }
 }

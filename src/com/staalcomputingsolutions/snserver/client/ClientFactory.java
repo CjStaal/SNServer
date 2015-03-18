@@ -10,6 +10,6 @@ package com.staalcomputingsolutions.snserver.client;
 public class ClientFactory {
 
     public static Client createClient(ClientInformation clientInformation) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new DefaultClient(clientInformation);
     }
 }

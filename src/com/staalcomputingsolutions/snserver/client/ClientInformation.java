@@ -3,24 +3,20 @@
  */
 package com.staalcomputingsolutions.snserver.client;
 
-import com.staalcomputingsolutions.snserver.client.computer.Computer;
-
 /**
  *
  * @author Charles Joseph Staal
  */
 public interface ClientInformation {
 
-    void addComputer(Computer computer);
+    public String getName();
 
-    String getName();
-
-    String getPhoneNumber();
+    public String getPhoneNumber();
 
     /**
      *
      * @return
      */
     @Override
-    String toString();
+    public String toString();
 }

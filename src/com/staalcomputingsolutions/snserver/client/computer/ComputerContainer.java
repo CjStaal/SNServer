@@ -21,4 +21,12 @@ public class ComputerContainer {
     public void addComputer(Computer computer) {
         this.computerList.add(computer);
     }
+
+    public List<Computer> getComputers() {
+        return this.computerList;
+    }
+
+    public void removeComputer(Computer computer) {
+        this.computerList.remove(computer);
+    }
 }
