@@ -75,6 +75,11 @@ class ClientConnection implements AutoCloseable {
             }
         } catch (IOException ex) {
             Logger.getLogger(ClientConnection.class.getName()).log(Level.SEVERE, null, ex);
+            try {
+                this.close();
+            } catch (Exception ex1) {
+                Logger.getLogger(ClientConnection.class.getName()).log(Level.SEVERE, null, ex1);
+            }
         }
     }
 
