@@ -14,5 +14,4 @@ public class PingerFactory {
     public static Pinger createPinger(Replier replier) {
         return new DefaultPinger(replier);
     }
-    
 }

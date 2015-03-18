@@ -6,35 +6,34 @@ package com.staalcomputingsolutions.snserver.client;
 import com.staalcomputingsolutions.snserver.client.computer.Computer;
 import com.staalcomputingsolutions.snserver.client.computer.ComputerContainer;
 
-
 /**
  *
  * @author Charles Joseph Staal
  */
 public class DefaultClientInformation implements ClientInformation {
-    
+
     private final ComputerContainer computerContainer;
-    
+
     private final String name, phoneNumber;
-    
-    public DefaultClientInformation(String name, String phoneNumber){
+
+    public DefaultClientInformation(String name, String phoneNumber) {
         this.computerContainer = new ComputerContainer();
         this.name = name;
         this.phoneNumber = phoneNumber;
     }
-    
+
     @Override
-    public String getName(){
+    public String getName() {
         return this.name;
     }
-    
+
     @Override
-    public String getPhoneNumber(){
+    public String getPhoneNumber() {
         return this.phoneNumber;
     }
-    
+
     @Override
-    public String toString(){
+    public String toString() {
         return "Name: " + this.getName() + "\nPhone number: " + this.getPhoneNumber();
     }
 

@@ -15,7 +15,7 @@ public class Computer {
         this.name = name;
         this.localIP = localIP;
     }
-    
+
     public String getName() {
         return this.name;
     }

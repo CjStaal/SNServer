@@ -10,24 +10,26 @@ import java.io.InputStream;
 
 public class DefaultListener implements Listener{
 
-    private InputStream inputStream;
-    private DataInputStream dataInputStream;
+    private final InputStream inputStream;
+    private final DataInputStream dataInputStream;
     
     public DefaultListener(InputStream inputStream){
         this.inputStream = inputStream;
         this.dataInputStream = new DataInputStream(inputStream);
     }
     
+    @Override
     public InputStream getInputStream(){
         return this.inputStream;
     }
     
+    @Override
     public DataInputStream getDataInputStream(){
         return this.dataInputStream;
     }
     
+    @Override
     public String listen() throws IOException{
         return dataInputStream.readUTF();
     }
-    
 }

@@ -46,8 +46,8 @@ public class DefaultMessageQueue implements MessageQueue {
     private void callBack() {
         callback.notifyOfMessage();
     }
-    
-    public String poll(){
+
+    public String poll() {
         return messageQueue.poll();
     }
 }

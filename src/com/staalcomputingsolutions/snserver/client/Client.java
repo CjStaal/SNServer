@@ -8,6 +8,4 @@ package com.staalcomputingsolutions.snserver.client;
  * @author Charles Joseph Staal
  */
 public interface Client {
-
-    
 }

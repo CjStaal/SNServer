@@ -15,5 +15,4 @@ public class ReplierFactory {
     public static Replier createReplier(Socket socket) throws IOException {
         return new DefaultReplier(socket.getOutputStream());
     }
-    
 }

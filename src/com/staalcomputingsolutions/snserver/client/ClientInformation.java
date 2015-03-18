@@ -5,8 +5,6 @@ package com.staalcomputingsolutions.snserver.client;
 
 import com.staalcomputingsolutions.snserver.client.computer.Computer;
 
-
-
 /**
  *
  * @author Charles Joseph Staal
@@ -25,5 +23,4 @@ public interface ClientInformation {
      */
     @Override
     String toString();
-    
 }

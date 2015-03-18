@@ -22,7 +22,7 @@ public class ServerSN {
     public static void main(String[] args) throws IOException {
         SessionHandler handler = new SessionHandler();
         ServerSocket serverSocket = new ServerSocket(1001);
-        while(true){
+        while (true) {
             try {
                 handler.addHandler(SessionFactory
                         .createSession(serverSocket.accept()));
@@ -31,5 +31,4 @@ public class ServerSN {
             }
         }
     }
-    
 }

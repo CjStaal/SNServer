@@ -37,5 +37,4 @@ public class DefaultPinger implements Pinger {
     public void stopPinger() {
         task.cancel();
     }
-
 }

@@ -7,7 +7,7 @@ package com.staalcomputingsolutions.snserver.messagequeue;
  *
  * @author Charles Joseph Staal
  */
-public interface MessageQueue extends Runnable{
-    
+public interface MessageQueue extends Runnable {
+
     public String poll();
 }

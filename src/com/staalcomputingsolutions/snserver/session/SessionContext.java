@@ -8,6 +8,7 @@ import com.staalcomputingsolutions.snserver.listener.Listener;
 import com.staalcomputingsolutions.snserver.messagequeue.MessageQueue;
 import com.staalcomputingsolutions.snserver.pinger.Pinger;
 import com.staalcomputingsolutions.snserver.replier.Replier;
+import java.net.Socket;
 
 /**
  *
@@ -34,9 +35,12 @@ public interface SessionContext {
     public Pinger getPinger();
 
     public Client getClient();
-    
+
     public void startPinger();
-    
+
     public void stopPinger();
-    
+
+    public Socket getSocket();
+
+    public void addSocket(Socket socket);
 }

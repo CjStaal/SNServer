@@ -8,23 +8,24 @@ import com.staalcomputingsolutions.snserver.listener.Listener;
 import com.staalcomputingsolutions.snserver.messagequeue.MessageQueue;
 import com.staalcomputingsolutions.snserver.pinger.Pinger;
 import com.staalcomputingsolutions.snserver.replier.Replier;
-
+import java.net.Socket;
 
 /**
  *
  * @author Charles Joseph Staal
  */
-public class DefaultSession implements Session{
+public class DefaultSession implements Session {
+
     private final SessionContext sessionContext;
-    
-    public DefaultSession(SessionContext sessionContext){
+
+    public DefaultSession(SessionContext sessionContext) {
         this.sessionContext = sessionContext;
     }
 
     @Override
     public void notifyOfMessage() {
     }
-    
+
     @Override
     public Listener getListener() {
         return this.sessionContext.getListener();
@@ -49,14 +50,19 @@ public class DefaultSession implements Session{
     public Client getClient() {
         return this.sessionContext.getClient();
     }
-    
+
     @Override
-    public void startPinger(){
+    public void startPinger() {
         this.sessionContext.startPinger();
     }
-    
+
     @Override
-    public void stopPinger(){
+    public void stopPinger() {
         this.sessionContext.stopPinger();
+    }
+
+    @Override
+    public Socket getSocket() {
+        return this.sessionContext.getSocket();
     }
 }

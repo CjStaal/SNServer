@@ -31,4 +31,14 @@ public class DefaultReplier implements Replier {
             Logger.getLogger(DefaultReplier.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    @Override
+    public OutputStream getOutputStream() {
+        return this.outputStream;
+    }
+
+    @Override
+    public DataOutputStream getDataOutputStream() {
+        return this.dataOutputStream;
+    }
 }

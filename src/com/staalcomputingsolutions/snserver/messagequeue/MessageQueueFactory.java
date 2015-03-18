@@ -3,14 +3,16 @@
  */
 package com.staalcomputingsolutions.snserver.messagequeue;
 
+import com.staalcomputingsolutions.snserver.listener.Listener;
+import com.staalcomputingsolutions.snserver.session.Session;
+
 /**
  *
  * @author Charles Joseph Staal
  */
 public class MessageQueueFactory {
 
-    public static MessageQueue createQueue() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static MessageQueue createQueue(Listener listener, Session callback) {
+        return new DefaultMessageQueue(listener, callback);
     }
-    
 }

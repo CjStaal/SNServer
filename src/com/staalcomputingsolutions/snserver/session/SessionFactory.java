@@ -34,6 +34,7 @@ public class SessionFactory {
 
         SessionContext sessionContext = new DefaultSessionContext();
 
+        sessionContext.addSocket(socket);
         sessionContext.addListener(listener);
         sessionContext.addReplier(replier);
         sessionContext.addMessageQueue(messageQueue);
@@ -42,5 +43,4 @@ public class SessionFactory {
 
         return new DefaultSession(sessionContext);
     }
-
 }

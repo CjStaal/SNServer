@@ -11,14 +11,14 @@ import java.util.List;
  * @author Charles Joseph Staal
  */
 public class ComputerContainer {
-    
+
     private final List<Computer> computerList;
-    
-    public ComputerContainer(){
+
+    public ComputerContainer() {
         this.computerList = new ArrayList();
     }
-    
-    public void addComputer(Computer computer){
+
+    public void addComputer(Computer computer) {
         this.computerList.add(computer);
     }
 }
