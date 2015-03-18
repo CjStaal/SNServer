@@ -24,5 +24,15 @@ public interface SessionContext {
     public void addPinger(Pinger pinger);
 
     public void addClient(Client client);
+
+    public Listener getListener();
+
+    public Replier getReplier();
+
+    public MessageQueue getMessageQueue();
+
+    public Pinger getPinger();
+
+    public Client getClient();
     
 }

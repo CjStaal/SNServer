@@ -3,8 +3,8 @@
  */
 package com.staalcomputingsolutions.snserver.messagequeue;
 
-import com.staalcomputingsolutions.snserver.client.Client;
 import com.staalcomputingsolutions.snserver.listener.Listener;
+import com.staalcomputingsolutions.snserver.session.Session;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -15,23 +15,25 @@ import java.util.logging.Logger;
  *
  * @author Charles Joseph Staal
  */
-public class DefaultMessageQueue implements MessageQueue{
+public class DefaultMessageQueue implements MessageQueue {
+
     private final Listener listener;
     private final Queue<String> messageQueue;
-    private final Client client;
-    public DefaultMessageQueue(Listener listener, Client callback){
+    private final Session callback;
+
+    public DefaultMessageQueue(Listener listener, Session callback) {
         this.messageQueue = new LinkedList();
         this.listener = listener;
-        this.client  = callback;
+        this.callback = callback;
     }
-    
-    private void addToQueue(String message){
+
+    private void addToQueue(String message) {
         this.messageQueue.add(message);
     }
-    
+
     @Override
-    public void run(){
-        while(true){
+    public void run() {
+        while (true) {
             try {
                 this.addToQueue(listener.listen());
                 this.callBack();
@@ -40,9 +42,12 @@ public class DefaultMessageQueue implements MessageQueue{
             }
         }
     }
+
+    private void callBack() {
+        callback.notifyOfMessage();
+    }
     
-    
-    private void callBack(){
-        client.notifyOfMessage();
+    public String poll(){
+        return messageQueue.poll();
     }
 }

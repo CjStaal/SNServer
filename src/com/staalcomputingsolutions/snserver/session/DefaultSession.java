@@ -3,15 +3,50 @@
  */
 package com.staalcomputingsolutions.snserver.session;
 
+import com.staalcomputingsolutions.snserver.client.Client;
+import com.staalcomputingsolutions.snserver.listener.Listener;
+import com.staalcomputingsolutions.snserver.messagequeue.MessageQueue;
+import com.staalcomputingsolutions.snserver.pinger.Pinger;
+import com.staalcomputingsolutions.snserver.replier.Replier;
+
 
 /**
  *
  * @author Charles Joseph Staal
  */
 public class DefaultSession implements Session{
-    private SessionContext sessionContext;
+    private final SessionContext sessionContext;
     
     public DefaultSession(SessionContext sessionContext){
         this.sessionContext = sessionContext;
+    }
+
+    @Override
+    public void notifyOfMessage() {
+    }
+    
+    @Override
+    public Listener getListener() {
+        return this.sessionContext.getListener();
+    }
+
+    @Override
+    public Replier getReplier() {
+        return this.sessionContext.getReplier();
+    }
+
+    @Override
+    public MessageQueue addMessageQueue() {
+        return this.sessionContext.getMessageQueue();
+    }
+
+    @Override
+    public Pinger getPinger(Pinger pinger) {
+        return this.sessionContext.getPinger();
+    }
+
+    @Override
+    public Client getClient() {
+        return this.sessionContext.getClient();
     }
 }

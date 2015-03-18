@@ -9,4 +9,5 @@ package com.staalcomputingsolutions.snserver.messagequeue;
  */
 public interface MessageQueue extends Runnable{
     
+    public String poll();
 }

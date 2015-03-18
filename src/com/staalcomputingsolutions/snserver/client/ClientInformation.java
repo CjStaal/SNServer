@@ -3,7 +3,8 @@
  */
 package com.staalcomputingsolutions.snserver.client;
 
-import com.staalcomputingsolutions.snserver.client.computer.Computer;
+import com.staalcomputingsolutions.sns.model.client.Computer;
+
 
 /**
  *

@@ -3,10 +3,28 @@
  */
 package com.staalcomputingsolutions.snserver.session;
 
+import com.staalcomputingsolutions.snserver.client.Client;
+import com.staalcomputingsolutions.snserver.listener.Listener;
+import com.staalcomputingsolutions.snserver.messagequeue.MessageQueue;
+import com.staalcomputingsolutions.snserver.pinger.Pinger;
+import com.staalcomputingsolutions.snserver.replier.Replier;
+
 /**
  *
  * @author Charles Joseph Staal
  */
 public interface Session {
-    
+
+    public void notifyOfMessage();
+
+    public Listener getListener();
+
+    public Replier getReplier();
+
+    public MessageQueue addMessageQueue();
+
+    public Pinger getPinger(Pinger pinger);
+
+    public Client getClient();
+
 }

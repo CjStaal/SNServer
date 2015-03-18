@@ -3,20 +3,21 @@
  */
 package com.staalcomputingsolutions.snserver.client;
 
-import com.staalcomputingsolutions.snserver.client.computer.Computer;
-import java.util.ArrayList;
-import java.util.List;
+import com.staalcomputingsolutions.sns.model.client.Computer;
+import com.staalcomputingsolutions.sns.model.client.ComputerContainer;
 
 /**
  *
  * @author Charles Joseph Staal
  */
 public class DefaultClientInformation implements ClientInformation {
-    private final List<Computer> computerList = new ArrayList();
+    
+    private ComputerContainer computerContainer;
     
     private final String name, phoneNumber;
     
     public DefaultClientInformation(String name, String phoneNumber){
+        this.computerContainer = new ComputerContainer();
         this.name = name;
         this.phoneNumber = phoneNumber;
     }
@@ -38,6 +39,6 @@ public class DefaultClientInformation implements ClientInformation {
 
     @Override
     public void addComputer(Computer computer) {
-        this.computerList.add(computer);
+        this.computerContainer.addComputer(computer);
     }
 }

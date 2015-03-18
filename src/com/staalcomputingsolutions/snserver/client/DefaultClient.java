@@ -3,6 +3,7 @@
  */
 package com.staalcomputingsolutions.snserver.client;
 
+
 /**
  *
  * @author Charles Joseph Staal
@@ -17,4 +18,5 @@ public class DefaultClient implements Client{
     public ClientInformation getClientInformation(){
         return this.clientInformation;
     }
+
 }
