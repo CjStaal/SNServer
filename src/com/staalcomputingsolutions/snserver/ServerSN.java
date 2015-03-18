@@ -25,8 +25,8 @@ public class ServerSN {
         ServerSocket serverSocket = new ServerSocket(1001);
         while(true){
             try {
-                Session session = SessionFactory
-                        .createSession(serverSocket.accept());
+                handler.addHandler(SessionFactory
+                        .createSession(serverSocket.accept()));
             } catch (Exception ex) {
                 Logger.getLogger(ServerSN.class.getName()).log(Level.SEVERE, null, ex);
             }
