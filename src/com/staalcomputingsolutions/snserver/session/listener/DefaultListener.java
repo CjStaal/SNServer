@@ -1,39 +1,44 @@
 /*
  * Copyright [2015] [Charles Joseph Staal]
  */
-package com.staalcomputingsolutions.snserver.listener;
+package com.staalcomputingsolutions.snserver.session.listener;
 
+import com.staalcomputingsolutions.snserver.message.Message;
+import com.staalcomputingsolutions.snserver.message.messagequeue.MessageQueue;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
-public class DefaultListener implements Listener{
+public class DefaultListener implements Listener {
 
     private final InputStream inputStream;
     private final DataInputStream dataInputStream;
-    
-    public DefaultListener(InputStream inputStream){
+    private final String uuid;
+
+    public DefaultListener(InputStream inputStream, String uuid) {
         this.inputStream = inputStream;
         this.dataInputStream = new DataInputStream(inputStream);
+        this.uuid = uuid;
     }
-    
+
     @Override
-    public InputStream getInputStream(){
+    public InputStream getInputStream() {
         return this.inputStream;
     }
-    
+
     @Override
-    public DataInputStream getDataInputStream(){
+    public DataInputStream getDataInputStream() {
         return this.dataInputStream;
     }
-    
+
     @Override
-    public String listen(){
+    public String listen() {
         try {
-            return dataInputStream.readUTF();
+            while(true){
+                MessageQueue.addToQueue(new Message(uuid, dataInputStream.readUTF()));
+            }
         } catch (IOException ex) {
             Logger.getLogger(DefaultListener.class.getName()).log(Level.SEVERE, null, ex);
         }

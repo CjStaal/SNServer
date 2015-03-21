@@ -1,12 +1,12 @@
 /*
  * Copyright [2015] [Charles Joseph Staal]
  */
-package com.staalcomputingsolutions.snserver.client.messageExecutor;
+package com.staalcomputingsolutions.snserver.message.messageExecutor;
 
 /**
  *
  * @author Charles Joseph Staal
  */
-public class DefaultMessageExecutor {
+public interface MessageExecutor {
     
 }

@@ -3,11 +3,9 @@
  */
 package com.staalcomputingsolutions.snserver.session;
 
-import com.staalcomputingsolutions.snserver.client.Client;
-import com.staalcomputingsolutions.snserver.listener.Listener;
-import com.staalcomputingsolutions.snserver.messagequeue.MessageQueue;
-import com.staalcomputingsolutions.snserver.pinger.Pinger;
-import com.staalcomputingsolutions.snserver.replier.Replier;
+import com.staalcomputingsolutions.snserver.session.client.Client;
+import com.staalcomputingsolutions.snserver.session.listener.Listener;
+import com.staalcomputingsolutions.snserver.session.replier.Replier;
 import java.net.Socket;
 
 /**
@@ -16,7 +14,7 @@ import java.net.Socket;
  */
 public class DefaultSession implements Session {
 
-    private SessionContext sessionContext;
+    private final SessionContext sessionContext;
 
     DefaultSession(SessionContext sessionContext) {
         this.sessionContext = sessionContext;
@@ -33,32 +31,17 @@ public class DefaultSession implements Session {
     }
 
     @Override
-    public MessageQueue addMessageQueue() {
-        return this.sessionContext.getMessageQueue();
-    }
-
-    @Override
-    public Pinger getPinger(Pinger pinger) {
-        return this.sessionContext.getPinger();
-    }
-
-    @Override
     public Client getClient() {
         return this.sessionContext.getClient();
     }
 
     @Override
-    public void startPinger() {
-        this.sessionContext.startPinger();
-    }
-
-    @Override
-    public void stopPinger() {
-        this.sessionContext.stopPinger();
-    }
-
-    @Override
     public Socket getSocket() {
         return this.sessionContext.getSocket();
+    }
+
+    @Override
+    public String getUUID() {
+        return this.sessionContext.getUUID();
     }
 }

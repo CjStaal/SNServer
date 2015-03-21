@@ -1,7 +1,7 @@
 /*
  * Copyright [2015] [Charles Joseph Staal]
  */
-package com.staalcomputingsolutions.snserver.listener;
+package com.staalcomputingsolutions.snserver.session.listener;
 
 import java.io.DataInputStream;
 import java.io.IOException;

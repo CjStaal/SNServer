@@ -1,7 +1,7 @@
 /*
  * Copyright [2015] [Charles Joseph Staal]
  */
-package com.staalcomputingsolutions.snserver.replier;
+package com.staalcomputingsolutions.snserver.session.replier;
 
 import java.io.DataOutputStream;
 import java.io.OutputStream;

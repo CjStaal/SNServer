@@ -1,10 +1,10 @@
 /*
  * Copyright [2015] [Charles Joseph Staal]
  */
-package com.staalcomputingsolutions.snserver.client;
+package com.staalcomputingsolutions.snserver.session.client;
 
-import com.staalcomputingsolutions.snserver.client.computer.Computer;
-import com.staalcomputingsolutions.snserver.client.computer.ComputerContainer;
+import com.staalcomputingsolutions.snserver.session.client.computer.Computer;
+import com.staalcomputingsolutions.snserver.session.client.computer.ComputerContainer;
 import java.util.List;
 
 /**

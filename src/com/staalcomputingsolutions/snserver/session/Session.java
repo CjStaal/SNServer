@@ -3,11 +3,9 @@
  */
 package com.staalcomputingsolutions.snserver.session;
 
-import com.staalcomputingsolutions.snserver.client.Client;
-import com.staalcomputingsolutions.snserver.listener.Listener;
-import com.staalcomputingsolutions.snserver.messagequeue.MessageQueue;
-import com.staalcomputingsolutions.snserver.pinger.Pinger;
-import com.staalcomputingsolutions.snserver.replier.Replier;
+import com.staalcomputingsolutions.snserver.session.client.Client;
+import com.staalcomputingsolutions.snserver.session.listener.Listener;
+import com.staalcomputingsolutions.snserver.session.replier.Replier;
 import java.net.Socket;
 
 /**
@@ -20,15 +18,9 @@ public interface Session {
 
     public Replier getReplier();
 
-    public MessageQueue addMessageQueue();
-
-    public Pinger getPinger(Pinger pinger);
-
     public Client getClient();
 
-    public void startPinger();
-
-    public void stopPinger();
-
     public Socket getSocket();
+
+    public String getUUID();
 }

@@ -1,7 +1,7 @@
 /*
  * Copyright [2015] [Charles Joseph Staal]
  */
-package com.staalcomputingsolutions.snserver.client.computer;
+package com.staalcomputingsolutions.snserver.session.client.computer;
 
 import java.util.ArrayList;
 import java.util.List;
