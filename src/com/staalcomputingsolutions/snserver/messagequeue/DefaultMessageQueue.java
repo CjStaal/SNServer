@@ -3,13 +3,9 @@
  */
 package com.staalcomputingsolutions.snserver.messagequeue;
 
-import com.staalcomputingsolutions.snserver.listener.Listener;
-import com.staalcomputingsolutions.snserver.session.Session;
-import java.io.IOException;
+import com.staalcomputingsolutions.snserver.client.messageExecutor.MessageExecutor;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -17,14 +13,12 @@ import java.util.logging.Logger;
  */
 public class DefaultMessageQueue implements MessageQueue {
 
-    private final Listener listener;
     private final Queue<String> messageQueue;
-    private final Session callback;
+    private final MessageExecutor msgExec;
 
-    public DefaultMessageQueue(Listener listener, Session callback) {
+    public DefaultMessageQueue(MessageExecutor msgExec) {
         this.messageQueue = new LinkedList();
-        this.listener = listener;
-        this.callback = callback;
+        this.msgExec = msgExec;
     }
 
     private void addToQueue(String message) {
@@ -33,21 +27,7 @@ public class DefaultMessageQueue implements MessageQueue {
 
     @Override
     public void run() {
-        while (true) {
-            try {
-                this.addToQueue(listener.listen());
-                this.callBack();
-            } catch (IOException ex) {
-                Logger.getLogger(DefaultMessageQueue.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void callBack() {
-        callback.notifyOfMessageInQueue();
-    }
-
-    public String poll() {
-        return messageQueue.poll();
-    }
 }

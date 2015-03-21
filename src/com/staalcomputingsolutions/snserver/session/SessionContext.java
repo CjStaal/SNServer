@@ -16,21 +16,17 @@ import java.net.Socket;
  */
 public interface SessionContext {
 
-    public void addListener(Listener listener);
+    public void setListener(Listener listener);
 
-    public void addReplier(Replier replier);
+    public void setReplier(Replier replier);
 
-    public void addMessageQueue(MessageQueue messageQueue);
+    public void setPinger(Pinger pinger);
 
-    public void addPinger(Pinger pinger);
-
-    public void addClient(Client client);
+    public void setClient(Client client);
 
     public Listener getListener();
 
     public Replier getReplier();
-
-    public MessageQueue getMessageQueue();
 
     public Pinger getPinger();
 
@@ -42,5 +38,5 @@ public interface SessionContext {
 
     public Socket getSocket();
 
-    public void addSocket(Socket socket);
+    public void setSocket(Socket socket);
 }

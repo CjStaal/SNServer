@@ -16,8 +16,6 @@ import java.net.Socket;
  */
 public interface Session {
 
-    public void notifyOfMessage();
-
     public Listener getListener();
 
     public Replier getReplier();
@@ -33,12 +31,4 @@ public interface Session {
     public void stopPinger();
 
     public Socket getSocket();
-
-    public void addContext(SessionContext sessionContext);
-
-    public void notifyListenError();
-
-    public void notifyOfReplyError();
-
-    public void notifyOfMessageInQueue();
 }

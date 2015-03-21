@@ -9,6 +9,7 @@ import com.staalcomputingsolutions.snserver.messagequeue.MessageQueue;
 import com.staalcomputingsolutions.snserver.pinger.Pinger;
 import com.staalcomputingsolutions.snserver.replier.Replier;
 import java.net.Socket;
+import java.util.UUID;
 
 /**
  *
@@ -22,29 +23,25 @@ public class DefaultSessionContext implements SessionContext {
     private Replier replier;
     private MessageQueue messageQueue;
     private Pinger pinger;
+    private final UUID uuid = java.util.UUID.randomUUID();
 
     @Override
-    public void addListener(Listener listener) {
+    public void setListener(Listener listener) {
         this.listener = listener;
     }
 
     @Override
-    public void addReplier(Replier replier) {
+    public void setReplier(Replier replier) {
         this.replier = replier;
     }
 
     @Override
-    public void addMessageQueue(MessageQueue messageQueue) {
-        this.messageQueue = messageQueue;
-    }
-
-    @Override
-    public void addPinger(Pinger pinger) {
+    public void setPinger(Pinger pinger) {
         this.pinger = pinger;
     }
 
     @Override
-    public void addClient(Client client) {
+    public void setClient(Client client) {
         this.client = client;
     }
 
@@ -56,11 +53,6 @@ public class DefaultSessionContext implements SessionContext {
     @Override
     public Replier getReplier() {
         return this.replier;
-    }
-
-    @Override
-    public MessageQueue getMessageQueue() {
-        return this.messageQueue;
     }
 
     @Override
@@ -89,7 +81,7 @@ public class DefaultSessionContext implements SessionContext {
     }
 
     @Override
-    public void addSocket(Socket socket) {
+    public void setSocket(Socket socket) {
         this.socket = socket;
     }
 }

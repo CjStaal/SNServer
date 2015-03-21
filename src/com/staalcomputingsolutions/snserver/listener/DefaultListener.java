@@ -3,7 +3,6 @@
  */
 package com.staalcomputingsolutions.snserver.listener;
 
-import com.staalcomputingsolutions.snserver.session.Session;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,12 +14,10 @@ public class DefaultListener implements Listener{
 
     private final InputStream inputStream;
     private final DataInputStream dataInputStream;
-    private final Session callback;
     
-    public DefaultListener(InputStream inputStream, Session callback){
+    public DefaultListener(InputStream inputStream){
         this.inputStream = inputStream;
         this.dataInputStream = new DataInputStream(inputStream);
-        this.callback = callback;
     }
     
     @Override
@@ -39,7 +36,6 @@ public class DefaultListener implements Listener{
             return dataInputStream.readUTF();
         } catch (IOException ex) {
             Logger.getLogger(DefaultListener.class.getName()).log(Level.SEVERE, null, ex);
-            callback.notifyListenError();
         }
         return null;
     }

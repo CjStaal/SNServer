@@ -3,6 +3,10 @@
  */
 package com.staalcomputingsolutions.snserver;
 
+import com.staalcomputingsolutions.snserver.client.messageExecutor.DefaultMessageExecutor;
+import com.staalcomputingsolutions.snserver.client.messageExecutor.MessageExecutor;
+import com.staalcomputingsolutions.snserver.messagequeue.DefaultMessageQueue;
+import com.staalcomputingsolutions.snserver.messagequeue.MessageQueue;
 import com.staalcomputingsolutions.snserver.session.SessionFactory;
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -22,6 +26,8 @@ public class ServerSN {
     public static void main(String[] args) throws IOException {
         SessionHandler handler = new SessionHandler();
         ServerSocket serverSocket = new ServerSocket(1001);
+        MessageExecutor msgExec= new DefaultMessageExecutor();
+        MessageQueue mqueue = new DefaultMessageQueue(msgExec);
         while (true) {
             try {
                 handler.addHandler(SessionFactory
