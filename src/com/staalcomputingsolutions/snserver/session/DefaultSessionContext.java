@@ -19,7 +19,11 @@ public class DefaultSessionContext implements SessionContext {
     private Listener listener;
     private Replier replier;
 
-    private final String uuid = java.util.UUID.randomUUID().toString();
+    private final String uuid;
+    
+    public DefaultSessionContext(){
+        this.uuid = java.util.UUID.randomUUID().toString();
+    }
 
     public void setListener(Listener listener) {
         this.listener = listener;
