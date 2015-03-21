@@ -5,7 +5,6 @@ package com.staalcomputingsolutions.snserver.session;
 
 import com.staalcomputingsolutions.snserver.session.client.Client;
 import com.staalcomputingsolutions.snserver.session.listener.Listener;
-import com.staalcomputingsolutions.snserver.message.messagequeue.MessageQueue;
 import com.staalcomputingsolutions.snserver.session.replier.Replier;
 import java.net.Socket;
 
@@ -19,7 +18,6 @@ public class DefaultSessionContext implements SessionContext {
     private Client client;
     private Listener listener;
     private Replier replier;
-    private MessageQueue messageQueue;
 
     private final String uuid = java.util.UUID.randomUUID().toString();
 
