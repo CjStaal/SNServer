@@ -3,6 +3,7 @@
  */
 package com.staalcomputingsolutions.snserver.session;
 
+import com.staalcomputingsolutions.snserver.session.context.SessionContext;
 import com.staalcomputingsolutions.snserver.session.client.Client;
 import com.staalcomputingsolutions.snserver.session.listener.Listener;
 import com.staalcomputingsolutions.snserver.session.replier.Replier;

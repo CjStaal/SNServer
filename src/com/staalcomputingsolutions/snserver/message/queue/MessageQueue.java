@@ -1,7 +1,7 @@
 /*
  * Copyright [2015] [Charles Joseph Staal]
  */
-package com.staalcomputingsolutions.snserver.message.messagequeue;
+package com.staalcomputingsolutions.snserver.message.queue;
 
 import com.staalcomputingsolutions.snserver.message.Message;
 import java.util.concurrent.ArrayBlockingQueue;

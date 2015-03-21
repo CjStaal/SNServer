@@ -1,7 +1,7 @@
 /*
  * Copyright [2015] [Charles Joseph Staal]
  */
-package com.staalcomputingsolutions.snserver.session;
+package com.staalcomputingsolutions.snserver.session.context;
 
 import com.staalcomputingsolutions.snserver.session.client.Client;
 import com.staalcomputingsolutions.snserver.session.listener.Listener;

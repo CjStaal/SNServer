@@ -1,7 +1,7 @@
 /*
  * Copyright [2015] [Charles Joseph Staal]
  */
-package com.staalcomputingsolutions.snserver.message.messageExecutor;
+package com.staalcomputingsolutions.snserver.message.executor;
 
 /**
  *

@@ -1,12 +1,12 @@
 /*
  * Copyright [2015] [Charles Joseph Staal]
  */
-package com.staalcomputingsolutions.snserver.message.messageExecutor;
+package com.staalcomputingsolutions.snserver.message.executor;
 
 import com.staalcomputingsolutions.snserver.message.Message;
-import com.staalcomputingsolutions.snserver.message.messagequeue.MessageQueue;
+import com.staalcomputingsolutions.snserver.message.queue.MessageQueue;
 import com.staalcomputingsolutions.snserver.session.Session;
-import com.staalcomputingsolutions.snserver.session.SessionHandler;
+import com.staalcomputingsolutions.snserver.sessionhandler.SessionHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 

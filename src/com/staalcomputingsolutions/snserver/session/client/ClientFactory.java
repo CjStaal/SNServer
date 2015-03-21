@@ -3,6 +3,8 @@
  */
 package com.staalcomputingsolutions.snserver.session.client;
 
+import com.staalcomputingsolutions.snserver.session.client.information.ClientInformation;
+
 /**
  *
  * @author Charles Joseph Staal

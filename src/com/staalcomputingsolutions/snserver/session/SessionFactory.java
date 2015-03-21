@@ -3,8 +3,9 @@
  */
 package com.staalcomputingsolutions.snserver.session;
 
+import com.staalcomputingsolutions.snserver.session.context.DefaultSessionContext;
 import com.staalcomputingsolutions.snserver.session.client.Client;
-import com.staalcomputingsolutions.snserver.session.client.ClientInformationFactory;
+import com.staalcomputingsolutions.snserver.session.client.information.ClientInformationFactory;
 import com.staalcomputingsolutions.snserver.session.client.DefaultClient;
 import com.staalcomputingsolutions.snserver.session.listener.DefaultListener;
 import com.staalcomputingsolutions.snserver.session.listener.Listener;

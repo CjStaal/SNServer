@@ -4,7 +4,7 @@
 package com.staalcomputingsolutions.snserver.session.listener;
 
 import com.staalcomputingsolutions.snserver.message.Message;
-import com.staalcomputingsolutions.snserver.message.messagequeue.MessageQueue;
+import com.staalcomputingsolutions.snserver.message.queue.MessageQueue;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;

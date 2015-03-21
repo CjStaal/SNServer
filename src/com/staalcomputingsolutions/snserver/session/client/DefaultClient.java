@@ -3,6 +3,7 @@
  */
 package com.staalcomputingsolutions.snserver.session.client;
 
+import com.staalcomputingsolutions.snserver.session.client.information.ClientInformation;
 import com.staalcomputingsolutions.snserver.session.client.computer.Computer;
 import com.staalcomputingsolutions.snserver.session.client.computer.ComputerContainer;
 import java.util.List;

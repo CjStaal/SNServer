@@ -1,7 +1,7 @@
 /*
  * Copyright [2015] [Charles Joseph Staal]
  */
-package com.staalcomputingsolutions.snserver.session.client;
+package com.staalcomputingsolutions.snserver.session.client.information;
 
 /**
  *

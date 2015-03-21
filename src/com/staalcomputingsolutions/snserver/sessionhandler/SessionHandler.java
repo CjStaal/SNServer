@@ -1,8 +1,9 @@
 /*
  * Copyright [2015] [Charles Joseph Staal]
  */
-package com.staalcomputingsolutions.snserver.session;
+package com.staalcomputingsolutions.snserver.sessionhandler;
 
+import com.staalcomputingsolutions.snserver.session.Session;
 import java.util.ArrayList;
 import java.util.List;
 
