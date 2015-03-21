@@ -21,8 +21,8 @@ public class MessageQueue {
     public static void addToQueue(Message message) {
         messageQueue.add(message);
     }
-    
-    public static Message pollQueue(){
-        return messageQueue.poll();
+
+    public static Message take() throws InterruptedException {
+        return messageQueue.take();
     }
 }

@@ -3,7 +3,6 @@
  */
 package com.staalcomputingsolutions.snserver.session;
 
-import com.staalcomputingsolutions.snserver.session.Session;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,5 +24,14 @@ public class SessionHandler {
 
     public void removeHandler(Session session) {
         this.sessions.remove(session);
+    }
+    
+    public Session retrieveSession(String uuid) throws Exception{
+        for(Session session : sessions){
+            if(session.getUUID().equals(uuid)){
+                return session;
+            }
+        }
+        throw new Exception("UUID does not correspond to a session.");
     }
 }

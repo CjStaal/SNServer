@@ -7,6 +7,6 @@ package com.staalcomputingsolutions.snserver.message.messageExecutor;
  *
  * @author Charles Joseph Staal
  */
-public interface MessageExecutor {
+public interface MessageExecutor extends Runnable{
     
 }
