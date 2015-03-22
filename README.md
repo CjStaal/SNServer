@@ -1,4 +1,4 @@
-# Really-simple-notification-server
+# Not-so-simple-anymore-notification-server
 
 This is ready for testing. The client connects and a session is made. From there the listeners send messages to the queue which executes certain commands.
 ADDCOMP - adds computer
