@@ -1,7 +1,9 @@
 # Really-simple-notification-server
 
-I dont like how the damn clientConnection holds a reference to handler, and a reference to the clientinformation.
-Seems like bad encapsulation.
-I made this in 15 minutes, just so I had something to go on.
-A wise man once told me, write something so it works, then start fixing it up.
-So that's what I decided to do.
+This is ready for testing. The client connects and a session is made. From there the listeners send messages to the queue which executes certain commands.
+ADDCOMP - adds computer
+REMCOMP - removes computer
+UPDCOMP - updates computer status
+UPDCLST - updates client status
+
+I will add the parameters and command formatting later.
