@@ -23,4 +23,8 @@ public interface Session {
     public Socket getSocket();
 
     public String getUUID();
+
+    public void updateStatus(String status);
+    
+    public String getStatus();
 }

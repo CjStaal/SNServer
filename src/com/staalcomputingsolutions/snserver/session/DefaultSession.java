@@ -45,4 +45,14 @@ public class DefaultSession implements Session {
     public String getUUID() {
         return this.sessionContext.getUUID();
     }
+
+    @Override
+    public void updateStatus(String status) {
+        this.sessionContext.setStatus(status);
+    }
+
+    @Override
+    public String getStatus() {
+        return this.sessionContext.getStatus();
+    }
 }

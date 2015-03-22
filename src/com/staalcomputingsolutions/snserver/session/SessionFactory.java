@@ -31,6 +31,7 @@ public class SessionFactory {
         sessionContext.setListener(listener);
         sessionContext.setReplier(replier);
         sessionContext.setClient(client);
+        sessionContext.setStatus("OK");
         
         return new DefaultSession(sessionContext);
     }

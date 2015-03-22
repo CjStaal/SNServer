@@ -18,6 +18,7 @@ public class DefaultSessionContext implements SessionContext {
     private Client client;
     private Listener listener;
     private Replier replier;
+    private String status;
 
     private final String uuid;
     
@@ -64,5 +65,15 @@ public class DefaultSessionContext implements SessionContext {
     @Override
     public String getUUID() {
         return this.uuid;
+    }
+
+    @Override
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    
+    @Override
+    public String getStatus(){
+        return this.status;
     }
 }

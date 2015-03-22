@@ -10,17 +10,13 @@ package com.staalcomputingsolutions.snserver.session.client.computer;
 public class Computer {
 
     private final String name, localIP, uuid;
+    private String status;
 
-    public Computer(String name, String localIP) {
-        this.uuid = java.util.UUID.randomUUID().toString();
-        this.name = name;
-        this.localIP = localIP;
-    }
-
-    public Computer(String uuid, String name, String localIP) {
+    public Computer(String uuid, String name, String localIP, String status) {
         this.uuid = uuid;
         this.name = name;
         this.localIP = localIP;
+        this.status = status;
     }
 
     public Computer(String[][] args) throws Exception {
@@ -48,8 +44,17 @@ public class Computer {
         return this.localIP;
     }
 
+    public void updateStatus(String status) {
+        this.status = status;
+    }
+    
+    public String getStatus(){
+        return this.status;
+    }
+
     @Override
     public String toString() {
-        return "Name: " + this.getName() + "\nLocalIP: " + this.getLocalIP();
+        return "Name: " + this.getName() + "\nLocalIP: " + this.getLocalIP()
+                + "\nStaus: " + this.getStatus();
     }
 }

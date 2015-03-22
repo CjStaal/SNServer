@@ -41,35 +41,37 @@ public class DefaultMessageExecutor implements MessageExecutor {
                         if (args2.length == 3
                                 && (args2[0][0].equals("UUID")
                                 && (args2[1][0].equals("NAME")
-                                && args2[2][0].equals("LOCALIP")))) {
-                            session.getClient().getComputerContainer().addComputer(new Computer(args2[0][1], args2[1][1], args2[2][1]));
+                                && (args2[2][0].equals("LOCALIP")
+                                && (args2[3][0].equals("STATUS")))))) {
+                            session.getClient().getComputerContainer().addComputer(new Computer(args2[0][1], args2[1][1], args2[2][1], args2[3][1]));
                         }
-                            break;
-                        
-                case "REMCOMP":
-                        if (args2.length == 3
-                                && (args2[0][0].equals("UUID")
-                                && (args2[1][0].equals("NAME")
-                                && args2[2][0].equals("LOCALIP")))) {
+                        break;
+                    case "REMCOMP":
+                        if (args2.length == 1 && args2[0][0].equals("UUID")) {
                             session.getClient().getComputerContainer().removeComputer(
                                     session.getClient().getComputerContainer().findWithUUID(args2[0][1]));
                         }
                         break;
                     case "UPDCOMP":
+                        if (args2.length == 2 && (args2[0][0].equals("UUID")
+                                && args2[1][0].equals("STATUS"))) {
+                            session.getClient().getComputerContainer().findWithUUID(args2[0][1]).updateStatus(args2[1][1]);
+                        }
                         break;
                     case "UPDCLST":
+                        if(args2.length == 1 && (args2[0][0].equals("STATUS")))
+                            session.updateStatus(args2[0][1]);
                         break;
                     case "UPDCLIE":
                         break;
                     case "REGCLIE":
                         break;
                 }
-
             } catch (Exception ex) {
                 Logger.getLogger(DefaultMessageExecutor.class.getName()).log(Level.SEVERE, null, ex);
-            }
 
             }
         }
-
     }
+
+}
