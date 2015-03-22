@@ -59,12 +59,9 @@ public class DefaultMessageExecutor implements MessageExecutor {
                         }
                         break;
                     case "UPDCLST":
-                        if(args2.length == 1 && (args2[0][0].equals("STATUS")))
+                        if (args2.length == 1 && (args2[0][0].equals("STATUS"))) {
                             session.updateStatus(args2[0][1]);
-                        break;
-                    case "UPDCLIE":
-                        break;
-                    case "REGCLIE":
+                        }
                         break;
                 }
             } catch (Exception ex) {
@@ -73,5 +70,4 @@ public class DefaultMessageExecutor implements MessageExecutor {
             }
         }
     }
-
 }
