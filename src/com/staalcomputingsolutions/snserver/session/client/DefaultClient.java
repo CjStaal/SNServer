@@ -4,9 +4,7 @@
 package com.staalcomputingsolutions.snserver.session.client;
 
 import com.staalcomputingsolutions.snserver.session.client.information.ClientInformation;
-import com.staalcomputingsolutions.snserver.session.client.computer.Computer;
 import com.staalcomputingsolutions.snserver.session.client.computer.ComputerContainer;
-import java.util.List;
 
 /**
  *
@@ -29,21 +27,6 @@ public class DefaultClient implements Client {
     @Override
     public ComputerContainer getComputerContainer() {
         return this.computerContainer;
-    }
-
-    @Override
-    public List<Computer> getComputers() {
-        return this.computerContainer.getComputers();
-    }
-
-    @Override
-    public void addComputer(Computer computer) {
-        this.computerContainer.addComputer(computer);
-    }
-
-    @Override
-    public void removeComputer(Computer computer) {
-        this.computerContainer.removeComputer(computer);
     }
 
     @Override
