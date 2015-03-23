@@ -18,7 +18,9 @@ public class ClientInformationFactory {
         dataOutputStream.writeUTF("READY");
         String[] info = dataInputStream.readUTF().split(":");
         if (info[0].equals("INFO")) {
-            return new DefaultClientInformation(info[1].split(";")[1], info[2].split(";")[1]);
+            String[] info1 = info[1].split(";");
+            
+            return new DefaultClientInformation(info1[0].split("=")[1], info1[1].split("=")[1]);
         }
         throw new Exception("Could not get information for client.");
     }

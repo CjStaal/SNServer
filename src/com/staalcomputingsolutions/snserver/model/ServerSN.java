@@ -25,7 +25,7 @@ public class ServerSN {
      */
     public static void main(String[] args) throws IOException {
         SessionHandler sessionHandler = new SessionHandler();
-        ServerSocket serverSocket = new ServerSocket(1001);
+        ServerSocket serverSocket = new ServerSocket(1000);
         MessageQueue mqueue = new MessageQueue(100); //This is used statically. Says it's not used, but it is.
         MessageExecutor mExec = new DefaultMessageExecutor(sessionHandler);
         Thread t = new Thread(mExec);
