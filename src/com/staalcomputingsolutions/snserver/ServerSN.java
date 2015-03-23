@@ -3,6 +3,8 @@
  */
 package com.staalcomputingsolutions.snserver;
 
+import com.staalcomputingsolutions.snserver.message.executor.DefaultMessageExecutor;
+import com.staalcomputingsolutions.snserver.message.executor.MessageExecutor;
 import com.staalcomputingsolutions.snserver.sessionhandler.SessionHandler;
 import com.staalcomputingsolutions.snserver.message.queue.MessageQueue;
 import com.staalcomputingsolutions.snserver.session.SessionFactory;
@@ -22,12 +24,16 @@ public class ServerSN {
      * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
-        SessionHandler handler = new SessionHandler();
+        SessionHandler sessionHandler = new SessionHandler();
         ServerSocket serverSocket = new ServerSocket(1001);
-        MessageQueue mqueue = new MessageQueue();
+        MessageQueue mqueue = new MessageQueue(100); //This is used statically. Says it's not used, but it is.
+        MessageExecutor mExec = new DefaultMessageExecutor(sessionHandler);
+        Thread t = new Thread(mExec);
+        t.start();
+
         while (true) {
             try {
-                handler.addHandler(SessionFactory
+                sessionHandler.addHandler(SessionFactory
                         .createSession(serverSocket.accept()));
             } catch (Exception ex) {
                 Logger.getLogger(ServerSN.class.getName()).log(Level.SEVERE, null, ex);

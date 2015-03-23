@@ -11,11 +11,17 @@ import java.io.InputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * This is the default listener object. It listens for a sessions input.
+ *
+ * @author Charles Joseph Staal
+ */
 public class DefaultListener implements Listener {
 
     private final InputStream inputStream;
     private final DataInputStream dataInputStream;
     private final String uuid;
+    private Thread t;
 
     public DefaultListener(InputStream inputStream, String uuid) {
         this.inputStream = inputStream;
@@ -33,15 +39,22 @@ public class DefaultListener implements Listener {
         return this.dataInputStream;
     }
 
-    @Override
-    public String listen() {
+    public void startListening() {
+        t = new Thread(this::listen);
+        t.start();
+    }
+
+    public void stopListening() {
+        t.stop();
+    }
+
+    private void listen() {
         try {
-            while(true){
+            while (true) {
                 MessageQueue.addToQueue(new Message(uuid, dataInputStream.readUTF()));
             }
         } catch (IOException ex) {
             Logger.getLogger(DefaultListener.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return null;
     }
 }

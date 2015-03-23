@@ -9,6 +9,7 @@ import com.staalcomputingsolutions.snserver.session.replier.Replier;
 import java.net.Socket;
 
 /**
+ * This is the default session context used while creating sessions.
  *
  * @author Charles Joseph Staal
  */
@@ -21,8 +22,8 @@ public class DefaultSessionContext implements SessionContext {
     private String status;
 
     private final String uuid;
-    
-    public DefaultSessionContext(){
+
+    public DefaultSessionContext() {
         this.uuid = java.util.UUID.randomUUID().toString();
     }
 
@@ -71,9 +72,9 @@ public class DefaultSessionContext implements SessionContext {
     public void setStatus(String status) {
         this.status = status;
     }
-    
+
     @Override
-    public String getStatus(){
+    public String getStatus() {
         return this.status;
     }
 }

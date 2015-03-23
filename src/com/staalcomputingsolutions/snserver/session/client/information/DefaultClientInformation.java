@@ -30,5 +30,4 @@ public class DefaultClientInformation implements ClientInformation {
     public String toString() {
         return "Name: " + this.getName() + "\nPhone number: " + this.getPhoneNumber();
     }
-
 }

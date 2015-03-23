@@ -13,10 +13,6 @@ public interface ClientInformation {
 
     public String getPhoneNumber();
 
-    /**
-     *
-     * @return
-     */
     @Override
     public String toString();
 }

@@ -6,6 +6,7 @@ package com.staalcomputingsolutions.snserver.session.client;
 import com.staalcomputingsolutions.snserver.session.client.computer.ComputerContainer;
 
 /**
+ * This is the interface default client uses.
  *
  * @author Charles Joseph Staal
  */

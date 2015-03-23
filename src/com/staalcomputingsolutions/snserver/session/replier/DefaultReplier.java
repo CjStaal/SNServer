@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
+ * This is the default replier object. It is used to send replies to clients.
  *
  * @author Charles Joseph Staal
  */

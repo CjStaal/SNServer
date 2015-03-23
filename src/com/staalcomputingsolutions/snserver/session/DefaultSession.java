@@ -10,6 +10,7 @@ import com.staalcomputingsolutions.snserver.session.replier.Replier;
 import java.net.Socket;
 
 /**
+ * This is the object used while creating a session.
  *
  * @author Charles Joseph Staal
  */
@@ -17,7 +18,7 @@ public class DefaultSession implements Session {
 
     private final SessionContext sessionContext;
 
-    DefaultSession(SessionContext sessionContext) {
+    public DefaultSession(SessionContext sessionContext) {
         this.sessionContext = sessionContext;
     }
 

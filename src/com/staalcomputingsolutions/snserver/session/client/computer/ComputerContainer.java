@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * This holds a list of computers. It is stored in the client object.
  *
  * @author Charles Joseph Staal
  */
@@ -29,10 +30,10 @@ public class ComputerContainer {
     public void removeComputer(Computer computer) {
         this.computerList.remove(computer);
     }
-    
-    public Computer findWithUUID(String uuid) throws Exception{
-        for(Computer computer : computerList){
-            if(computer.getUUID().equals(uuid)){
+
+    public Computer findWithUUID(String uuid) throws Exception {
+        for (Computer computer : computerList) {
+            if (computer.getUUID().equals(uuid)) {
                 return computer;
             }
         }

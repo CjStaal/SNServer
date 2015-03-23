@@ -12,6 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
+ * This object takes messages from the message queue and executes them.
  *
  * @author Charles Joseph Staal
  */

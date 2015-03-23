@@ -13,9 +13,10 @@ import java.util.concurrent.BlockingQueue;
  */
 public class MessageQueue {
 
-    private static final BlockingQueue<Message> messageQueue = new ArrayBlockingQueue(100);
+    private static BlockingQueue<Message> messageQueue;
 
-    public MessageQueue() {
+    public MessageQueue(int queueLength) {
+        messageQueue = new ArrayBlockingQueue(queueLength);
     }
 
     public static void addToQueue(Message message) {

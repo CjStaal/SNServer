@@ -9,6 +9,7 @@ import com.staalcomputingsolutions.snserver.session.replier.Replier;
 import java.net.Socket;
 
 /**
+ * This is the interface that default session context uses.
  *
  * @author Charles Joseph Staal
  */
@@ -21,10 +22,10 @@ public interface SessionContext {
     public Client getClient();
 
     public Socket getSocket();
-    
+
     public String getUUID();
 
     public void setStatus(String status);
-    
+
     public String getStatus();
 }

@@ -4,6 +4,7 @@
 package com.staalcomputingsolutions.snserver.session.client.computer;
 
 /**
+ * This is the computer object.
  *
  * @author Charles Joseph Staal
  */
@@ -47,8 +48,8 @@ public class Computer {
     public void updateStatus(String status) {
         this.status = status;
     }
-    
-    public String getStatus(){
+
+    public String getStatus() {
         return this.status;
     }
 

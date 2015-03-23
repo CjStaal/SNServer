@@ -7,6 +7,7 @@ import com.staalcomputingsolutions.snserver.session.client.information.ClientInf
 import com.staalcomputingsolutions.snserver.session.client.computer.ComputerContainer;
 
 /**
+ * This is the default client object.
  *
  * @author Charles Joseph Staal
  */
