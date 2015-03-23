@@ -64,6 +64,20 @@ public class DefaultMessageExecutor implements MessageExecutor {
                             session.updateStatus(args2[0][1]);
                         }
                         break;
+                    case "COMPHLP":
+                        if (args2.length == 2 && (args2[0][0].equals("UUID")
+                                && args2[1][0].equals("HELP"))) {
+                            Computer temp = session.getClient().getComputerContainer().findWithUUID(args2[0][1]);
+                            System.out.println(temp.getName() + " needs help");
+                            System.out.println(session.getClient().toString());
+                        } else if (args2.length == 3 && (args2[0][0].equals("UUID")
+                                && (args2[1][0].equals("HELP")
+                                && (args2[2][0].equals("MSG"))))) {
+                            Computer temp = session.getClient().getComputerContainer().findWithUUID(args2[0][1]);
+                            System.out.println(temp.getName() + " needs help");
+                            System.out.println("Message: " + args2[2][1]);
+                            System.out.println(session.getClient().toString());
+                        }
                 }
             } catch (Exception ex) {
                 Logger.getLogger(DefaultMessageExecutor.class.getName()).log(Level.SEVERE, null, ex);
